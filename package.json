@@ -1,17 +1,14 @@
 {
-  "name": "node-son",
+  "name": "Sorteio",
   "version": "1.0.0",
-  "description": "school of net",
+  "description": "Programa para sorteio #BaixadaNerd",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ewerton",
+  "author": "Ewerton Luan",
   "license": "ISC",
   "dependencies": {
-    "consolidate": "^0.15.1",
-    "express": "^4.16.3",
-    "pug": "^2.0.3",
-    "swig": "^1.4.2"
-  }
+    "express": "^4.16.3"
+    }
 }
