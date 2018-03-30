@@ -1,14 +1,13 @@
 
 var express = require('express')
-var cons = require('consolidate')
-var app = express()
 var fs = require('fs')
 var path = require('path')
+
+var app = express()
 
 app.listen(3000, function () {
   console.log('Server started')
 });
-
 
 app.use(express.static(path.join(__dirname,'static')))
 

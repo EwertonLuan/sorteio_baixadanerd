@@ -38,15 +38,6 @@ window.onload = function() {
     }
 }
 
-function pegar (list){
-    var lista_html = document.getElementById('lista').innerHTML
-    for (i in lista_html.split('\n')){
-        list.push(lista_html.split('\n')[i])
-    }
-    
-    document.getElementById('sorteio').style.display = "inline-block"
-}
-
 function sorteio (list){
     document.getElementById('nome').innerHTML = "Loading..."
     setTimeout(function(){
