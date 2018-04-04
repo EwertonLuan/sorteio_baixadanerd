@@ -24,8 +24,8 @@ window.onload = function() {
                     list.push(part.split('\n')[i])
                 }
 
-                document.getElementById('arquivo').style.display = "none"
-                document.getElementById('sorteio').style.display = "inline-block"
+                // document.getElementById('arquivo').style.display = "none"
+                // document.getElementById('sorteio').style.display = "inline-block"
             }
                 fileReader.readAsText(fileTobeRead);
             }

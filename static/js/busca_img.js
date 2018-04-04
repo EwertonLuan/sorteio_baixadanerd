@@ -7,20 +7,20 @@ var key = process.env.MEETUP
 var eventId = '247832487' // id do evento no site do meetup
 var path = '/MovimentoBaixadaNerd/events/'+eventId+'/attendance?key='+key+'&page=100'
 
-var membros = 'Ewerton Luan' //aqui será o nome da pessoa sorteada para comparar com o perfil do meetup
+var membros //aqui será o nome da pessoa sorteada para comparar com o perfil do meetup
 
-var img
+var img = []
 
 request(`${api}${path}`,(err,res,body)=>{
     var obj = JSON.parse(body)
     obj.forEach(function(o, index){
         if (o.member.name == membros){
-           img = o.member.photo.highres_link
+           img.push(o.member.photo.highres_link)
             
         }
             
     })
-    console.log(img)    
+        
 })
 
 module.exports = img
