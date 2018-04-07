@@ -3,6 +3,7 @@ html
     head
         link(rel='icon' href='img/robo.png' type='img/x-icon')
         link(rel='stylesheet' href='css/bootstrap.min.css')
+
         script(src='js/sorteio.js')
     body
         .text-center 
@@ -10,11 +11,29 @@ html
         .text-center#arquivo(style='display:inline-block')            
             input#txtfiletoread(type='file' class='text-center')
 
-        .text-center#botaosorteio
-            button(class='btn btn-primary btn-lg' style='display:inline-block' onclick='sorteio(list)') Sorteio
-        .text-center#imagem
-            img#imagem(src=link)
-        p.tex-center#nome(style='font-size: 70px')
-            strong text
+        //- .text-center#botaosorteio
+            
+        //- .text-center#imagem
+            
+        //- p.tex-center#nome(style='font-size: 70px')
+        //-     strong 
+        
+
+    
+        form(name='frmTest' action='/post' method='post' target='my_iframe')
+            .text-center
+                button(class='btn btn-primary btn-lg' type="submit"  onclick='sorteio(list)') Sorteio
+                        
+            p.text-center#nome(style='font-size: 70px')
+                strong 
+            input#web(type="text" name="nome" style='display:none')  
+            label
+                input( type="submit" name="sbt" value="Enviar" style='display:none')
+            .text-center
+                iframe(src="127.0.0.1:3000/post" name='my_iframe' width="660" height="400" frameborder="0") 
+              
+
+
+                    
         
     

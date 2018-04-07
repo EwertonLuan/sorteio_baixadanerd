@@ -1,5 +1,6 @@
 
 var list = []
+var name  
 
 window.onload = function() {
     //Verifica o suporte para a FIle API
@@ -24,7 +25,7 @@ window.onload = function() {
                     list.push(part.split('\n')[i])
                 }
 
-                // document.getElementById('arquivo').style.display = "none"
+                document.getElementById('arquivo').style.display = "none"
                 // document.getElementById('sorteio').style.display = "inline-block"
             }
                 fileReader.readAsText(fileTobeRead);
@@ -40,11 +41,14 @@ window.onload = function() {
 
 function sorteio (list){
     document.getElementById('nome').innerHTML = "Loading..."
-    setTimeout(function(){
     var selecionando = Math.floor(Math.random() * list.length)
     var sortudo = list[selecionando]
+    nome = list[selecionando]
 
     delet(list, selecionando)
+    document.getElementById('web').value = sortudo
+    setTimeout(function(){
+
     document.getElementById('nome').innerHTML = sortudo
 },2000)
 }
@@ -54,3 +58,6 @@ function delet(list, escolhidos){
 }
 
 
+function validaForm(frm){
+    console.log(frm.nome.value)
+}
