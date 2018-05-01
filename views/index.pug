@@ -3,22 +3,14 @@ html
     head
         link(rel='icon' href='img/robo.png' type='img/x-icon')
         link(rel='stylesheet' href='css/bootstrap.min.css')
-
+        meta(name="viewport" content="width=device-width, initial-scale=1")
         script(src='js/sorteio.js')
     body
         .text-center 
             img(src='/img/baixada.png' alt="image not found" width= "1000" height="339")
         .text-center#arquivo(style='display:inline-block')            
             input#txtfiletoread(type='file' class='text-center')
-
-        //- .text-center#botaosorteio
-            
-        //- .text-center#imagem
-            
-        //- p.tex-center#nome(style='font-size: 70px')
-        //-     strong 
-        
-
+      
     
         form(name='frmTest' action='/post' method='post' target='my_iframe')
             .text-center

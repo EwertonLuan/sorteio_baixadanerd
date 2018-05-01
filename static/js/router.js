@@ -9,11 +9,10 @@ var membros
 var img
 
 function test(){
-    
+ 
     console.log(img)
     
  }
-
 
 var membros 
 var path = require('path')
@@ -29,53 +28,42 @@ function gerar_imagem(imagem){
 setTimeout(function(){
     router.post('/post', function(req, res){
     
-    var conteudo = JSON.stringify(req.body);
-    
-    fs.writeFile('nome-do-ficheiro.txt', conteudo, 'utf8', function (err) {
-        if (err) throw err;
-        // correr código aqui depois do ficheiro estar gravado
-        var imagem_arquivo
-        setTimeout(function(){
-        fs.readFile('imagem.txt', function(err,data){
-            if(err) {
-                console.error("Could not open file: %s", err)
-            }
-            arquivo = JSON.parse(data)
-            imagem_arquivo = arquivo.img
-            
-            
-            console.log(imagem_arquivo)
-            res.render('post',{
-                link: imagem_arquivo
-                       
+        var conteudo = JSON.stringify(req.body);
+        
+        fs.writeFile('nome-do-ficheiro.txt', conteudo, 'utf8', function (err) {
+            if (err) throw err;
+            // correr código aqui depois do ficheiro estar gravado
+            var imagem_arquivo
+            setTimeout(function(){
+                fs.readFile('imagem.txt', function(err,data){
+                    if(err) {
+                        console.error("Could not open file: %s", err)
+                    }
+                    arquivo = JSON.parse(data)
+                    imagem_arquivo = arquivo.img                    
+                    
+                    console.log(imagem_arquivo)
+                    res.render('post',{
+                        link: imagem_arquivo                           
+                    })
                 })
-        })
-    },3000)
-    });
+            },3000)
+        });
 
-    n()
+        n()
 
- 
+        console.log(conteudo)
+        console.log(typeof(imagem_arquivo)+' tipo da imagem')
 
-    
-    
-    
-    console.log(conteudo)
-    console.log(typeof(imagem_arquivo)+' tipo da imagem')
-
-
-    // res.end('enviado')
-
-})
+    })
 },3000)
+
 setTimeout(function(){
     
     router.get('/', function(req, res){
         res.render('index',{
-        })
-    
+        })    
     })
 },3000)
-
 
 module.exports = router
