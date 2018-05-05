@@ -5,7 +5,7 @@ require('dotenv').load()
 function read(){
     var membros
     var test
-    fs.readFile('nomeDoSorteado.txt', function(err,data){
+    fs.readFile('nome-do-ficheiro.txt', function(err,data){
         if(err) {
             console.error("Could not open file: %s", err)
         }
@@ -28,7 +28,7 @@ function imagem(membros){
     var key = process.env.MEETUP_API
     
 
-    var eventId = '247832523' // id do evento no site do meetup
+    var eventId = '247832557' // id do evento no site do meetup
     var path = '/MovimentoBaixadaNerd/events/'+eventId+'/attendance?key='+key+'&page=1000'
     var test=[]
     request(`${api}${path}`,(err,res,body)=>{

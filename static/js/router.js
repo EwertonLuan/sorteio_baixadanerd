@@ -29,6 +29,7 @@ setTimeout(function(){
     router.post('/post', function(req, res){
     
         var conteudo = JSON.stringify(req.body);
+        console.log(conteudo+'aqui')
         
         fs.writeFile('nome-do-ficheiro.txt', conteudo, 'utf8', function (err) {
             if (err) throw err;

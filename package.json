@@ -1,6 +1,6 @@
 {
-  "name": "Sorteio",
-  "version": "2.0",
+  "name": "sorteio",
+  "version": "2.0.0",
   "description": "Programa para sorteio #BaixadaNerd",
   "main": "app.js",
   "scripts": {
