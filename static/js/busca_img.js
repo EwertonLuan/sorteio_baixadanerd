@@ -68,9 +68,9 @@ function imagem(membros){
                 });
 
 
-                return false
+                // return false
         }
-        if(teste == 0){
+        else if(teste == 0){
             console.log('o membro não esta no metup')
             var valida = '/img/robo.png'
             padrao = '{"img":"'+valida+'"}'
