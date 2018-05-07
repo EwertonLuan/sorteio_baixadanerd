@@ -35,21 +35,21 @@ function imagem(membros){
 
         var obj = JSON.parse(body)
         console.log('O nome passado para imagem foi '+membros)
-        var teste = 0
+        var teste = 'a'
         obj.forEach(function(o, index){
             var valida
             var padrao
-            
+            // Procura o membro que foi sorteado e se o membro contem foto
             if(o.member.name == membros ){
                 
                 if(o.member.photo) {
                     console.log('o membro tem foto')
                     valida = o.member.photo.photo_link
-                    teste= 1
+                    teste= 'b'
                 }else{
                     console.log('o membro tem foto não tem foto')
                     valida = '/img/baixada.png'
-                    teste= 1
+                    teste= 'b'
 
                     fs.writeFile('imagem.txt',valida, 'utf8', function (err) {
                     if (err) throw err;
@@ -69,18 +69,18 @@ function imagem(membros){
 
 
                 // return false
-        }
-        else if(teste == 0){
-            console.log('o membro não esta no metup')
-            var valida = '/img/robo.png'
-            padrao = '{"img":"'+valida+'"}'
+            }
+            else if(teste == 'a'){
+                console.log('o membro não esta no metup')
+                var valida = '/img/robo.png'
+                padrao = '{"img":"'+valida+'"}'
 
-            fs.writeFile('imagem.txt',padrao, 'utf8', function (err) {
-            if (err) throw err;
-            // correr código aqui depois do ficheiro estar gravado
-            return false
+                fs.writeFile('imagem.txt',padrao, 'utf8', function (err) {
+                if (err) throw err;
+                // correr código aqui depois do ficheiro estar gravado
+                return false
 
-        });
+            });
         }
 
     })
